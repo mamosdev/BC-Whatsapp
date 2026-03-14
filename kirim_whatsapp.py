@@ -17,7 +17,7 @@ from selenium.webdriver.support import expected_conditions as EC
 # =====================
 
 FILE_EXCEL = "data.xlsx"
-STATUS_TARGET = ["Berkas"]
+STATUS_TARGET = ["Lulus"]
 # Isikan Link dibawah ini
 LINK_GRUP = "https://chat.whatsapp.com/ISI_LINK"
 
@@ -29,15 +29,14 @@ DELAY_MAX = 10
 # TEMPLATE PESAN
 # =====================
 
-PESAN = """Assalamu'alaikum {nama} 
+PESAN = """Assalamu'alaikum {nama}
 
-Selamat! Anda dinyatakan LULUS seleksi PMBM MAN 1 Surakarta. 
+Selamat! Anda dinyatakan LULUS seleksi PMBM MAN 1 Surakarta.
 
-Silakan bergabung ke grup berikut: 
-{link} 
+Silakan bergabung ke grup berikut:
+{link}
 
-Terima kasih.
-"""
+Terima kasih."""
 
 
 # =====================
@@ -134,7 +133,10 @@ for _,row in tqdm(data.iterrows(), total=len(data)):
         )
 
 
-        box.send_keys(pesan)
+        for baris in pesan.split("\n"):
+            box.send_keys(baris)
+            box.send_keys(Keys.SHIFT, Keys.ENTER)
+
         box.send_keys(Keys.ENTER)
 
 
