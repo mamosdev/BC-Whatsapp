@@ -17,6 +17,7 @@ from selenium.webdriver.support import expected_conditions as EC
 # =====================
 
 FILE_EXCEL = "data.xlsx"
+# edit disini untuk kolom status 
 STATUS_TARGET = ["Lulus"]
 # Isikan Link dibawah ini
 LINK_GRUP = "https://chat.whatsapp.com/ISI_LINK"
